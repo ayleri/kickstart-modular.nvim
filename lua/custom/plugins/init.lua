@@ -2,4 +2,14 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+    {
+      "ellisonleao/gruvbox.nvim",
+      priority = 1000,  -- Ensures it loads early
+      config = function()
+        vim.o.termguicolors = true
+        vim.o.background = "dark"
+        vim.cmd("colorscheme gruvbox")
+      end,
+    },
+  }
