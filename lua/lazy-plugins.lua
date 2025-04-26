@@ -7,7 +7,9 @@
 --
 --  To update plugins you can run
 --    :Lazy update
---
+
+
+
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
@@ -68,9 +70,6 @@ require('lazy').setup({
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
-  
-  -- import themes
-  { import = 'custom.plugins.themes'},
 },
 
   {
