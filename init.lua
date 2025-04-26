@@ -5,7 +5,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 require 'options'
@@ -19,15 +19,15 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
-require("lazy").setup({
+require('lazy').setup {
   {
-    "ellisonleao/gruvbox.nvim",
+    'ellisonleao/gruvbox.nvim',
     lazy = false,
     priority = 1000,
   },
 
   { 'echasnovski/mini.nvim', version = false },
-})
+}
 
 vim.o.background = 'dark'
 vim.cmd [[colorscheme gruvbox]]

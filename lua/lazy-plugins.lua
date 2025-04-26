@@ -35,7 +35,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/blink-cmp',
 
-  require 'kickstart/plugins/tokyonight',
+  -- require 'kickstart/plugins/tokyonight',
 
   require 'kickstart/plugins/todo-comments',
 
@@ -68,7 +68,12 @@ require('lazy').setup({
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
-}, {
+  
+  -- import themes
+  { import = 'custom.plugins.themes'},
+},
+
+  {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
@@ -88,6 +93,6 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
-}) 
+})
 
 -- vim: ts=2 sts=2 sw=2 et
