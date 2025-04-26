@@ -1,3 +1,3 @@
 local M = {}
-M.current_theme = "nord"
+M.current_theme = "kanagawa"
 return M
