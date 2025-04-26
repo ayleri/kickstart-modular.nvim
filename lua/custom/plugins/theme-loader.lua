@@ -1,4 +1,4 @@
-local picker = require("lua.custom.plugins.themes.theme")
+local picker = require("custom.plugins.themes.theme-picker")
 
 -- pull spec
 local spec = require("custom.plugins.themes." .. picker.current_theme)
