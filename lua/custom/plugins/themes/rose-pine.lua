@@ -5,6 +5,7 @@ return {
     priority = 1000,
     config = function()
         require('rose-pine').setup {
+            background = 'dark',
             variant = 'moon', -- "main", "moon", "dawn"
             styles = {
                 bold = true,
