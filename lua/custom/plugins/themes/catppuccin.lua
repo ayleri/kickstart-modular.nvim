@@ -3,6 +3,6 @@ return {
     name = "catppuccin",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'catppuccin-mocha' -- or frappe, macchiato, latte
+      vim.cmd.colorscheme 'catppuccin-macchiato' -- or frappe, macchiato, latte
     end,
   }

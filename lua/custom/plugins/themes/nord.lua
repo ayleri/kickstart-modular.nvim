@@ -1,5 +1,5 @@
 return {
-    "shaunsingh/nord.nvim",
+    'shaunsingh/nord.nvim',
     lazy = false,
     priority = 1000,
     config = function()
@@ -12,4 +12,4 @@ return {
         vim.g.nord_bold = true
         vim.cmd.colorscheme 'nord'
     end,
-  }
+}
