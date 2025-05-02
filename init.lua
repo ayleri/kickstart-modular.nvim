@@ -20,12 +20,6 @@ require 'lazy-bootstrap'
 require 'lazy-plugins'
 
 require('lazy').setup {
-  -- {
-  --   'ellisonleao/gruvbox.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  -- },
-
   { 'echasnovski/mini.nvim', version = false }
 }
 
