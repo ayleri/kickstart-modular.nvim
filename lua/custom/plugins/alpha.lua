@@ -1,3 +1,5 @@
+-- https://github.com/nxtkofi/LightningNvim?tab=readme-ov-file#dashboard-images
+
 return {
 	"goolord/alpha-nvim",
 	event = "VimEnter",
@@ -90,15 +92,15 @@ return {
             dashboard.button('e', '  > New File', ':ene <BAR> startinsert <CR>'),
             dashboard.button('f', '  > Find File', ':cd $HOME/NeovimProjects | Telescope find_files<CR>'),
             dashboard.button('r', '  > Recent', ':Telescope oldfiles<CR>'),
-            dashboard.button('s', '  > Settings', ':e $MYVIMRC | cd %:p:h | pwd<CR>'),
-            dashboard.button('q', '  > Quit NVIM', ':qa<CR>'),
 			dashboard.button("w", '  > Change Header Image', function()
 				change_header()
 			end),
+            dashboard.button('s', '  > Settings', ':e $MYVIMRC | cd %:p:h | pwd<CR>'),
+            dashboard.button('q', '  > Quit NVIM', ':qa<CR>'),
         }
 
 		dashboard.config.layout = {
-			{ type = "padding", val = 3 },
+			{ type = "padding", val = 1 },
 			header,
 			{ type = "padding", val = 1 },
 			{
@@ -109,7 +111,7 @@ return {
 						val = {
 							{
 								type = "text",
-								val = ":3",
+								val = "NEOVIM",
 								opts = { hl = "Keyword", position = "center" },
 							},
 							dashboard.section.tasks,
@@ -136,7 +138,6 @@ return {
 			callback = function()
 				local stats = require("lazy").stats()
 				local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
-                -- add empty spaces for new lines
 				dashboard.section.footer.val =
 					{ " Loaded " .. stats.count .. " plugins  in " .. ms .. " ms " }
 				dashboard.section.header.opts.hl = "DashboardFooter"
