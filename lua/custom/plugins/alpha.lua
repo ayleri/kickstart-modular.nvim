@@ -92,9 +92,9 @@ return {
             dashboard.button('e', '  > New File', ':ene <BAR> startinsert <CR>'),
             dashboard.button('f', '  > Find File', ':cd $HOME/NeovimProjects | Telescope find_files<CR>'),
             dashboard.button('r', '  > Recent', ':Telescope oldfiles<CR>'),
-			dashboard.button("w", '  > Change Header Image', function()
-				change_header()
-			end),
+			-- dashboard.button("w", '  > Change Header Image', function()
+			-- 	change_header()
+			-- end),
             dashboard.button('s', '  > Settings', ':e $MYVIMRC | cd %:p:h | pwd<CR>'),
             dashboard.button('q', '  > Quit NVIM', ':qa<CR>'),
         }
@@ -111,7 +111,7 @@ return {
 						val = {
 							{
 								type = "text",
-								val = "NEOVIM",
+								val = "- NEOVIM -",
 								opts = { hl = "Keyword", position = "center" },
 							},
 							dashboard.section.tasks,
