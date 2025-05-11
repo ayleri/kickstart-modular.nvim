@@ -51,13 +51,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- CUSTOM KEYMAPPINGS
-vim.keymap.set('n', '<leader>p', ':w<CR>:!python %<CR>', { desc = 'Run current Python file using Python3'})
+vim.keymap.set('n', '<leader>p', ':w<CR>:!python %<CR>', { desc = 'Run current Python file using Python3' })
 vim.keymap.set('n', '<leader>tt', function()
   local line = 'from typing import List, Optional, Dict, Tuple, Set'
-  local row = vim.api.nvim_win_get_cursor(0)[1] -- get current row
+  local row = vim.api.nvim_win_get_cursor(0)[1]           -- get current row
   vim.api.nvim_set_current_line(line)
-  vim.api.nvim_buf_set_lines(0, row, row, true, {""}) -- insert empty line below
-  vim.api.nvim_win_set_cursor(0, {row + 1, 0}) -- move cursor down to new line
+  vim.api.nvim_buf_set_lines(0, row, row, true, { '' })   -- insert empty line below
+  vim.api.nvim_win_set_cursor(0, { row + 1, 0 })          -- move cursor down to new line
 end, { desc = 'Insert typing import and move down' })
 
 -- Vertical scroll and center
@@ -75,15 +75,15 @@ vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 
 -- Buffers
-vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts) -- next buffer
-vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts) -- prev buffer
-vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts) -- close buffer
+vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)          -- next buffer
+vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)    -- prev buffer
+vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts)   -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Window management
-vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
-vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
-vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
+vim.keymap.set('n', '<leader>v', '<C-w>v', opts)      -- split window vertically
+vim.keymap.set('n', '<leader>h', '<C-w>s', opts)      -- split window horizontally
+vim.keymap.set('n', '<leader>se', '<C-w>=', opts)     -- make split windows equal width & height
 vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
 
 -- -- Tabs
