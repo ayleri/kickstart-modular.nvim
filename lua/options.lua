@@ -70,7 +70,8 @@ vim.opt.confirm = true
 
 -- vim.o.hlsearch = false -- Set highlight on search
 vim.wo.number = true            -- Make line numbers default
-vim.opt.mouse = 'a'               -- Enable mouse mode
+
+vim.opt.mouse = ''               -- Disable mouse
 vim.opt.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
 vim.opt.breakindent = true        -- Enable break indent
 vim.opt.undofile = true           -- Save undo history
