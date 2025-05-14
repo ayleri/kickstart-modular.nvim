@@ -11,7 +11,7 @@ return {
     },
     cmd = 'Neotree',
     keys = {
-        { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+        { '\\', ':Neotree reveal<CR>:set relativenumber<CR>', desc = 'NeoTree reveal', silent = true },
     },
     opts = {
         filesystem = {
@@ -26,34 +26,35 @@ return {
     },
     config = function(_, opts)
         require('neo-tree').setup(opts)
+
+        -- Custom Gruvbox Material Highlights
         -- Gruvbox Material Medium Mix Color References
         -- https://github.com/sainnhe/gruvbox-material
+        -- local highlights = {
+        --     -- File/Folder Icons
+        --     NeoTreeFileIcon = { fg = '#d4be98' },                          -- light beige (fg)
+        --     NeoTreeDirectoryIcon = { fg = '#7daea3' },                     -- aqua
+        --     NeoTreeDirectoryName = { fg = '#a9b665' },                     -- green
+        --     NeoTreeSymbolicLinkTarget = { fg = '#d3869b', italic = true }, -- pinkish
 
-        local highlights = {
-            -- File/Folder Icons
-            NeoTreeFileIcon = { fg = '#d4be98' },                          -- light beige (fg)
-            NeoTreeDirectoryIcon = { fg = '#7daea3' },                     -- aqua
-            NeoTreeDirectoryName = { fg = '#a9b665' },                     -- green
-            NeoTreeSymbolicLinkTarget = { fg = '#d3869b', italic = true }, -- pinkish
+        --     -- Git Status
+        --     NeoTreeGitAdded = { fg = '#a9b665' },     -- green
+        --     NeoTreeGitModified = { fg = '#e78a4e' },  -- orange
+        --     NeoTreeGitDeleted = { fg = '#ea6962' },   -- red
+        --     NeoTreeGitConflict = { fg = '#d3869b' },  -- purple
+        --     NeoTreeGitUntracked = { fg = '#7daea3' }, -- aqua
+        --     NeoTreeGitIgnored = { fg = '#928374' },   -- greyed out
 
-            -- Git Status
-            NeoTreeGitAdded = { fg = '#a9b665' },     -- green
-            NeoTreeGitModified = { fg = '#e78a4e' },  -- orange
-            NeoTreeGitDeleted = { fg = '#ea6962' },   -- red
-            NeoTreeGitConflict = { fg = '#d3869b' },  -- purple
-            NeoTreeGitUntracked = { fg = '#7daea3' }, -- aqua
-            NeoTreeGitIgnored = { fg = '#928374' },   -- greyed out
-
-            -- Diagnostics (LSP)
-            NeoTreeDiagnosticError = { fg = '#ea6962' }, -- red
-            NeoTreeDiagnosticWarn = { fg = '#e78a4e' },  -- orange
-            NeoTreeDiagnosticInfo = { fg = '#7daea3' },  -- aqua
-            NeoTreeDiagnosticHint = { fg = '#a9b665' },  -- green
-        }
+        --     -- Diagnostics (LSP)
+        --     NeoTreeDiagnosticError = { fg = '#ea6962' }, -- red
+        --     NeoTreeDiagnosticWarn = { fg = '#e78a4e' },  -- orange
+        --     NeoTreeDiagnosticInfo = { fg = '#7daea3' },  -- aqua
+        --     NeoTreeDiagnosticHint = { fg = '#a9b665' },  -- green
+        -- }
 
         -- Apply highlights
-        for group, opts in pairs(highlights) do
-            vim.api.nvim_set_hl(0, group, opts)
-        end
+        -- for group, opts in pairs(highlights) do
+        --     vim.api.nvim_set_hl(0, group, opts)
+        -- end
     end,
 }
