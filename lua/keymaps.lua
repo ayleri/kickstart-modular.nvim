@@ -59,6 +59,9 @@ vim.keymap.set('n', '<leader>tt', function()
   vim.api.nvim_buf_set_lines(0, row, row, true, { '' })   -- insert empty line below
   vim.api.nvim_win_set_cursor(0, { row + 1, 0 })          -- move cursor down to new line
 end, { desc = 'Insert typing import and move down' })
+vim.keymap.set('n', '<leader>aa', function()
+  vim.cmd 'Alpha'
+end, { desc = 'Return to Alpha greeter' })
 
 -- Vertical scroll and center
 vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
