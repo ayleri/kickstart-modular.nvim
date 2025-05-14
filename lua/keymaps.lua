@@ -51,7 +51,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- CUSTOM KEYMAPPINGS
-vim.keymap.set('n', '<leader>p', ':w<CR>:Dispatch python %<CR>', { desc = 'Run current Python file using Dispatch' })
+vim.keymap.set('n', '<leader>p', '<cmd>w<CR><cmd>Dispatch python %<CR>', { desc = 'Run current Python file using Dispatch' })
 vim.keymap.set('n', '<leader>tt', function()
   local line = 'from typing import List, Optional, Dict, Tuple, Set'
   local row = vim.api.nvim_win_get_cursor(0)[1]           -- get current row
