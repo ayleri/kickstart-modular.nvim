@@ -6,7 +6,7 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>Q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -41,24 +41,19 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
+--  See `:help vim.hl.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.hl.on_yank()
   end,
 })
 
 -- CUSTOM KEYMAPPINGS
-vim.keymap.set('n', '<leader>p', '<cmd>w<CR><cmd>Dispatch python %<CR>', { desc = 'Run current Python file using Dispatch' })
-vim.keymap.set('n', '<leader>tt', function()
-  local line = 'from typing import List, Optional, Dict, Tuple, Set'
-  local row = vim.api.nvim_win_get_cursor(0)[1]           -- get current row
-  vim.api.nvim_set_current_line(line)
-  vim.api.nvim_buf_set_lines(0, row, row, true, { '' })   -- insert empty line below
-  vim.api.nvim_win_set_cursor(0, { row + 1, 0 })          -- move cursor down to new line
-end, { desc = 'Insert typing import and move down' })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set('n', '<leader>r', '<cmd>w<CR><cmd>Dispatch python %<CR>', { desc = 'Run current Python file using Dispatch' })
+
 vim.keymap.set('n', '<leader>aa', function()
   vim.cmd 'Alpha'
 end, { desc = 'Return to Alpha greeter' })
@@ -80,7 +75,7 @@ vim.keymap.set('n', '<Right>', '<cmd>vertical resize +2<CR>', opts)
 -- Buffers
 vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', opts)          -- next buffer
 vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<CR>', opts)    -- prev buffer
-vim.keymap.set('n', '<leader>x', '<cmd>bdelete!<CR>', opts)   -- close buffer
+vim.keymap.set('n', '<leader>w', '<cmd>bdelete!<CR>', opts)   -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Window management
@@ -103,7 +98,7 @@ vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
 -- vim.keymap.set('v', '>', '>gv', opts)
 
 -- -- Keep last yanked when pasting
--- vim.keymap.set('v', 'p', '"_dP', opts)
+vim.keymap.set('v', '<leader>p', '"_dP', opts)
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
