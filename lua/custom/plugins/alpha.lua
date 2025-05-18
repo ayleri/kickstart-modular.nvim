@@ -88,9 +88,10 @@ return {
         -- }
 
         dashboard.section.buttons.val = {
-            dashboard.button('e', '  > New File', ':ene <BAR> startinsert <CR>'),
-            dashboard.button('f', '  > Find File', ':cd $HOME/NeovimProjects | Telescope find_files<CR>'),
-            dashboard.button('r', '  > Recent', ':Telescope oldfiles<CR>'),
+            dashboard.button('e', '  > New File', '<cmd>ene <BAR> startinsert <CR>'),
+            dashboard.button('f', '  > Find File', '<cmd>cd C:/LeetCode/ | Telescope find_files<CR>'),
+            -- dashboard.button('f', '  > Find File', '<cmd>cd $HOME/NeovimProjects/ | Telescope find_files<CR>'),
+            dashboard.button('r', '  > Recent', '<cmd>Telescope oldfiles<CR>'),
             -- dashboard.button("w", '  > Change Header Image', function()
             -- 	change_header()
             -- end),
