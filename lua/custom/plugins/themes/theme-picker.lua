@@ -1,4 +1,4 @@
 local M = {}
-M.current_theme = 'kanagawa'
-M.statusline_theme = 'kanagawa'
+M.current_theme = 'melange'
+M.statusline_theme = 'melange'
 return M
